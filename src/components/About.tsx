@@ -1,4 +1,24 @@
 import { useState } from "react";
+import {
+  DiGit,
+  DiGithubBadge,
+  DiJsBadge,
+  DiLinux,
+  DiPython,
+} from "react-icons/di";
+import {
+  SiCypress,
+  SiDocker,
+  SiGraphql,
+  SiJavascript,
+  SiJunit5,
+  SiReact,
+  SiTypescript,
+  SiKotlin,
+  SiSpringboot,
+} from "react-icons/si";
+import { GrGraphQl } from "react-icons/gr";
+import { FaJava } from "react-icons/fa";
 
 function About() {
   const [isInglish, setInglish] = useState(true);
@@ -27,13 +47,121 @@ function About() {
       </div>
       <div className="my-4">
         <h1 className="text-2xl my-2">SKILLS & PROFICIENCY</h1>
-        <h2 className="text-xl">Languages:</h2>
-        <ul className="list-none">
-          <li>JavaScript (+TypeScript)</li>
-          <li>Python</li>
-          <li>Kotlin</li>
-          <li>Java</li>
-          <li>GraphQL</li>
+        <h2 className="text-xl mb-2">Languages:</h2>
+        <ul className="list-none flex ">
+          <li>
+            <div className="flex items-center gap-2">
+              <span className="text-yellow-400 text-2xl">
+                <SiJavascript />
+              </span>
+              <span className="text-blue-700 text-2xl">
+                <SiTypescript />
+              </span>
+              <span>JavaScript (+TypeScript)</span>
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-yellow-400 text-2xl">
+                <DiPython />
+              </span>
+              Python
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-orange-600 text-2xl">
+                <SiKotlin />
+              </span>
+              Kotlin
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-blue-400 text-2xl">
+                <FaJava />
+              </span>
+              Java
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-pink-600 text-2xl">
+                <GrGraphQl />
+              </span>
+              GraphQL
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="my-4">
+        <h2 className="text-xl mb-2">Frameworks & Runtimes:</h2>
+        <ul className="list-none flex">
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-blue-600 text-2xl">
+                <SiReact />
+              </span>
+              React
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-green-600 text-2xl">
+                <SiSpringboot />
+              </span>
+              SpringBoot
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div className="my-4">
+        <h2 className="text-xl mb-2">DevOps, CI/CD, and Testing:</h2>
+        <ul className="list-none flex">
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-red-500 text-2xl">
+                <DiGit />
+              </span>{" "}
+              Git &{" "}
+              <span className="text-2xl">
+                <DiGithubBadge />
+              </span>{" "}
+              Github
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-green-700 text-2xl">
+                <SiJunit5 />
+              </span>{" "}
+              JUnit 5Test
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-green-500 text-2xl">
+                <SiCypress />
+              </span>{" "}
+              Cypress
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-blue-500 text-2xl">
+                <SiDocker />
+              </span>{" "}
+              Docker
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-2xl">
+                <DiLinux />
+              </span>{" "}
+              Linux
+            </div>
+          </li>
         </ul>
       </div>
     </div>
