@@ -1,6 +1,6 @@
 import About from "./components/About";
 import Container from "./components/Container";
-import img_i from "./assets/img_my.jpg";
+import img_i from "./assets/img_my.png";
 import Navbar from "./components/Navbar";
 import MusicPlayer from "./components/MusicPlayer";
 import Contact from "./components/Contact";
