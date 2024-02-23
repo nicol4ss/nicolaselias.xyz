@@ -1,23 +1,39 @@
-function Navbar() {
+interface NavbarProps {
+  translate: boolean;
+  onAboutClick(): void;
+  onContactClick(): void;
+  onContactRepositories(): void;
+}
+
+function Navbar({
+  translate,
+  onAboutClick,
+  onContactClick,
+  onContactRepositories,
+}: NavbarProps) {
   return (
-    <nav className="bg-gray-800">
+    <nav className="shadow-xl">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
-            <span className="text-white font-semibold">Logo</span>
-          </div>
-          <div className="hidden md:block">
-            <div className="ml-4 flex items-center space-x-4">
-              <a href="#" className="text-gray-300 hover:text-white">
-                Home
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white">
-                About
-              </a>
-              <a href="#" className="text-gray-300 hover:text-white">
-                Contact
-              </a>
-            </div>
+        <div className="flex items-center justify-center h-16">
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={onAboutClick}
+              className="text-gray-300 hover:text-white font-bold"
+            >
+              {translate ? "ABOUT" : "SOBRE"}
+            </button>
+            <button
+              onClick={onContactClick}
+              className="text-gray-300 hover:text-white font-bold"
+            >
+              {translate ? "CONTACT" : "CONTATO"}
+            </button>
+            <button
+              onClick={onContactRepositories}
+              className="text-gray-300 hover:text-white font-bold"
+            >
+              {translate ? "REPOSITORIES" : "REPÓSITORIOS"}
+            </button>
           </div>
         </div>
       </div>

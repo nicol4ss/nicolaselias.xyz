@@ -1,27 +1,24 @@
-import { useState } from "react";
-import {
-  DiGit,
-  DiGithubBadge,
-  DiJsBadge,
-  DiLinux,
-  DiPython,
-} from "react-icons/di";
+import { DiGit, DiGithubBadge, DiLinux, DiPython } from "react-icons/di";
 import {
   SiCypress,
   SiDocker,
-  SiGraphql,
   SiJavascript,
   SiJunit5,
   SiReact,
   SiTypescript,
   SiKotlin,
   SiSpringboot,
+  SiCplusplus,
 } from "react-icons/si";
 import { GrGraphQl } from "react-icons/gr";
 import { FaJava } from "react-icons/fa";
 
-function About() {
-  const [isInglish, setInglish] = useState(true);
+interface AboutProps {
+  translate: boolean;
+  setTranslate(translate: boolean): void;
+}
+
+function About({ translate, setTranslate }: AboutProps) {
   const descriptionPt = `Oi! Meu nome é Nicolas Elias, sou Bolsista de Desenvolvimento Full Stack no Laboratorio Bridge_ e estudante
   de Ciências da Computação na Universidade Federal de Santa Catarina em Florianópolis - SC. Tenho experiência de mais de um ano
   na área de desenvolvimento web e estou buscando me especializar em desenvolvimento full stack. Sou apaixonado por tecnologia e
@@ -36,14 +33,8 @@ function About() {
   return (
     <div className="text-white">
       <div>
-        <button
-          className="bg-gray-600 hover:bg-gray-400 font-semibold py-2 px-4 border border-gray-800 rounded shadow text-white"
-          onClick={() => setInglish(!isInglish)}
-        >
-          {isInglish ? "Traduzir" : "Translate"}
-        </button>
-        <h1 className="text-2xl">{!isInglish ? "Sobre:" : "About:"}</h1>
-        <p className="text-lg">{isInglish ? descriptionIn : descriptionPt}</p>
+        <h1 className="text-2xl">{!translate ? "Sobre:" : "About:"}</h1>
+        <p className="text-lg">{translate ? descriptionIn : descriptionPt}</p>
       </div>
       <div className="my-4">
         <h1 className="text-2xl my-2">SKILLS & PROFICIENCY</h1>
@@ -82,6 +73,14 @@ function About() {
                 <FaJava />
               </span>
               Java
+            </div>
+          </li>
+          <li>
+            <div className="flex items-center gap-2 mx-2">
+              <span className="text-blue-400 text-2xl">
+                <SiCplusplus />
+              </span>
+              C++
             </div>
           </li>
           <li>
@@ -164,6 +163,12 @@ function About() {
           </li>
         </ul>
       </div>
+      <button
+        className="bg-gray-600 hover:bg-gray-400 font-semibold py-6 px-12 border border-gray-800 rounded shadow text-white"
+        onClick={() => setTranslate(!translate)}
+      >
+        {translate ? "Traduzir" : "Translate"}
+      </button>
     </div>
   );
 }
