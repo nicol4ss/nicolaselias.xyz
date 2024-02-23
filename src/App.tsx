@@ -39,7 +39,7 @@ function App() {
           <div className="rounder">
             <img
               src={img_i}
-              className="mx-auto w-72 rounded-3xl shadow-lg mb-4"
+              className="mx-auto w-72 rounded-xl shadow-lg mb-4"
             />
             <Container border>
               <InfoComponent
