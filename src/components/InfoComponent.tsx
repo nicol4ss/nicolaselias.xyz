@@ -30,7 +30,7 @@ function InfoComponent({ infos, office, translate }: InfoProps) {
 
       <div className="text-white">
         <p className="text-blue-600">
-          {translate ? "//Actual office" : "//Trablho atual"}
+          {translate ? "//Actual office" : "//Trabalho atual"}
         </p>
         <p className="text-white">Office myOffice;</p>
         <p>
