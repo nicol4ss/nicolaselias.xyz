@@ -1,4 +1,4 @@
-import music from "../assets/She-Dont-Droid-Bishop.mp3";
+import music from "../assets/all-the-mountains-are-high.mp3";
 import { useState } from "react";
 import { FaPlay, FaPause } from "react-icons/fa";
 
@@ -6,8 +6,7 @@ interface MusicPlayerProps {
   translate: boolean;
 }
 
-export const song = new Audio(music);
-song.volume = 0.2;
+const song = new Audio(music);
 
 function MusicPlayer({ translate }: MusicPlayerProps) {
   const [isPlaying, setPlaying] = useState(false);

@@ -32,14 +32,15 @@ function App() {
         translate={translate}
         onAboutClick={() => handleToggleBlink("about")}
         onContactClick={() => handleToggleBlink("contact")}
-        onContactRepositories={() => handleToggleBlink("repositories")}
+        onRepositoriesClick={() => handleToggleBlink("repositories")}
       />
-      <div className="container mx-4 my-4 md:container md:mx-auto md:my-auto p-4 animate-fadeIn">
-        <div className="flex space-x-2">
-          <div className="rounder">
+      <div className="container mx-2 mt-2 mb-0 sm:mx-4 sm:mt-4 sm:mb-0 md:mx-auto md:mt-0 md:mb-0 p-2 sm:p-4 animate-fadeIn">
+        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+          <div className="rounded">
             <img
               src={img_i}
-              className="mx-auto w-72 rounded-xl shadow-lg mb-4"
+              className="mx-auto w-48 sm:w-72 rounded-xl shadow-lg mb-4"
+              alt="Profile"
             />
             <Container border>
               <InfoComponent
@@ -55,24 +56,24 @@ function App() {
               <MusicPlayer translate={translate} />
             </Container>
           </div>
-          <div className="container mx-4 my-4 md:container md:mx-auto md:my-auto p-4">
+          <div className="flex-grow">
             <Container border isBlinking={isBlinkingAbout}>
               <About translate={translate} setTranslate={setTranslate} />
             </Container>
           </div>
         </div>
       </div>
-      <div className="container mx-4 my-4 md:container md:mx-auto md:my-auto p-4 animate-fadeIn flex gap-4">
+      <div className="container mx-2 mt-2 mb-0 sm:mx-4 sm:mt-4 sm:mb-0 md:mx-auto md:mt-0 md:mb-0 p-2 sm:p-4 animate-fadeIn flex flex-col sm:flex-row gap-4">
         <Container
           border
-          className="flex items-center justify-center flex-1 "
+          className="flex items-center justify-center flex-grow"
           isBlinking={isBlinkingContact}
         >
           <Contact translate={translate} />
         </Container>
         <Container
           border
-          className="flex-1 ml-8"
+          className="flex-grow"
           isBlinking={isBlinkingonRepositories}
         >
           <Repositories translate={translate} />

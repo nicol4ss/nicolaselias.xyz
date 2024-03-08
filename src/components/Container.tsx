@@ -13,8 +13,10 @@ const Container: React.FC<ComponentProps> = ({
   className,
   isBlinking,
 }) => {
-  const containerClasses = `container mx-4 my-4 md:container md:mx-auto md:my-auto p-4 w-full ${
-    border ? "border-solid border-2 border-gray-500 rounded-3xl" : ""
+  const containerClasses = `container mx-2 my-2 sm:mx-4 sm:my-4 p-2 sm:p-4 w-full ${
+    border
+      ? "border-solid border-2 border-gray-500 rounded-xl sm:rounded-3xl"
+      : ""
   } ${isBlinking ? "animate-blink" : ""} ${className || ""}`;
 
   return <div className={containerClasses}>{children}</div>;
