@@ -17,7 +17,7 @@ const Container: React.FC<ComponentProps> = ({
     border
       ? "border-solid border-2 border-gray-500 rounded-xl sm:rounded-3xl"
       : ""
-  } ${isBlinking ? "animate-blink" : ""} ${className || ""}`;
+  } ${isBlinking ? "animate-blink" : ""} ${className || ""} break-words`;
 
   return <div className={containerClasses}>{children}</div>;
 };

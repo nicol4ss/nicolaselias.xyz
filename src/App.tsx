@@ -1,18 +1,19 @@
+import { useState } from "react";
 import About from "./components/About";
 import Container from "./components/Container";
 import img_i from "./assets/img_my.png";
 import Navbar from "./components/Navbar";
 import MusicPlayer from "./components/MusicPlayer";
 import Contact from "./components/Contact";
-import { useState } from "react";
 import Repositories from "./components/Repositories";
 import InfoComponent from "./components/InfoComponent";
+import Skills from "./components/Skills";
 
 function App() {
   const [translate, setTranslate] = useState(false);
   const [isBlinkingAbout, setIsBlinkingAbout] = useState(false);
   const [isBlinkingContact, setIsBlinkingContact] = useState(false);
-  const [isBlinkingonRepositories, setIsBlinkingRepositories] = useState(false);
+  const [isBlinkingRepositories, setIsBlinkingRepositories] = useState(false);
 
   const handleToggleBlink = (section: string) => {
     if (section === "about") setIsBlinkingAbout(true);
@@ -27,59 +28,56 @@ function App() {
   };
 
   return (
-    <>
+    <div className="App overflow-x-hidden">
       <Navbar
         translate={translate}
         onAboutClick={() => handleToggleBlink("about")}
         onContactClick={() => handleToggleBlink("contact")}
         onRepositoriesClick={() => handleToggleBlink("repositories")}
       />
-      <div className="container mx-2 mt-2 mb-0 sm:mx-4 sm:mt-4 sm:mb-0 md:mx-auto md:mt-0 md:mb-0 p-2 sm:p-4 animate-fadeIn">
-        <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
-          <div className="rounded">
-            <img
-              src={img_i}
-              className="mx-auto w-48 sm:w-72 rounded-xl shadow-lg mb-4"
-              alt="Profile"
-            />
-            <Container border>
-              <InfoComponent
-                infos={{ Name: "Nicolas", LastName: "Elias" }}
-                office={{
-                  Occupation: "Dev. FullStack jr",
-                  Enterprise: "@laboratoriobridge",
-                }}
-                translate={translate}
+      <div className="animate-fadeIn">
+        <div className="container mx-auto p-4 sm:pl-8 sm:pr-4 md:p-4">
+          <div className="flex flex-col md:flex-row gap-4 items-start justify-center">
+            <div className="w-full md:w-1/3 mb-4">
+              <img
+                src={img_i}
+                className="rounded-xl shadow-lg mb-4 w-48 mx-auto md:w-72"
+                alt="Profile"
               />
-            </Container>
-            <Container>
-              <MusicPlayer translate={translate} />
-            </Container>
-          </div>
-          <div className="flex-grow">
-            <Container border isBlinking={isBlinkingAbout}>
-              <About translate={translate} setTranslate={setTranslate} />
-            </Container>
+              <Container border>
+                <InfoComponent
+                  infos={{ Name: "Nicolas", LastName: "Elias" }}
+                  office={{
+                    Occupation: "Dev. FullStack jr",
+                    Enterprise: "@laboratoriobridge",
+                  }}
+                  translate={translate}
+                />
+              </Container>
+              <Container>
+                <MusicPlayer translate={translate} />
+              </Container>
+            </div>
+            <div className="w-full md:flex-1 space-y-4">
+              <Container border isBlinking={isBlinkingAbout}>
+                <About translate={translate} setTranslate={setTranslate} />
+              </Container>
+              <Container border isBlinking={isBlinkingAbout}>
+                <Skills />
+              </Container>
+              <div className="flex flex-col md:flex-row gap-4">
+                <Container border isBlinking={isBlinkingContact}>
+                  <Contact translate={translate} />
+                </Container>
+                <Container border isBlinking={isBlinkingRepositories}>
+                  <Repositories translate={translate} />
+                </Container>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div className="container mx-2 mt-2 mb-0 sm:mx-4 sm:mt-4 sm:mb-0 md:mx-auto md:mt-0 md:mb-0 p-2 sm:p-4 animate-fadeIn flex flex-col sm:flex-row gap-4">
-        <Container
-          border
-          className="flex items-center justify-center flex-grow"
-          isBlinking={isBlinkingContact}
-        >
-          <Contact translate={translate} />
-        </Container>
-        <Container
-          border
-          className="flex-grow"
-          isBlinking={isBlinkingonRepositories}
-        >
-          <Repositories translate={translate} />
-        </Container>
-      </div>
-    </>
+    </div>
   );
 }
 

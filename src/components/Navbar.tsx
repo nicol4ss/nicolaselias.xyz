@@ -2,14 +2,14 @@ interface NavbarProps {
   translate: boolean;
   onAboutClick(): void;
   onContactClick(): void;
-  onContactRepositories(): void;
+  onRepositoriesClick(): void;
 }
 
 function Navbar({
   translate,
   onAboutClick,
   onContactClick,
-  onContactRepositories,
+  onRepositoriesClick,
 }: NavbarProps) {
   return (
     <nav className="shadow-xl">
@@ -29,7 +29,7 @@ function Navbar({
               {translate ? "CONTACT" : "CONTATO"}
             </button>
             <button
-              onClick={onContactRepositories}
+              onClick={onRepositoriesClick}
               className="text-gray-300 hover:text-white font-bold"
             >
               {translate ? "REPOSITORIES" : "REPÓSITORIOS"}
