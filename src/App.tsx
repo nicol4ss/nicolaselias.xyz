@@ -27,13 +27,18 @@ function App() {
     }, 200);
   };
 
+  const scrollToSection = (sectionId: string) => {
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <div className="App overflow-x-hidden">
+    <div className="App overflow-x-hidden safe:pt-4 safe:pb-4 safe:pl-4 safe:pr-4">
       <Navbar
         translate={translate}
         onAboutClick={() => handleToggleBlink("about")}
         onContactClick={() => handleToggleBlink("contact")}
         onRepositoriesClick={() => handleToggleBlink("repositories")}
+        scrollToSection={scrollToSection}
       />
       <div className="animate-fadeIn">
         <div className="container mx-auto p-4 sm:pl-8 sm:pr-4 md:p-4">
@@ -41,7 +46,7 @@ function App() {
             <div className="w-full md:w-1/3 mb-4">
               <img
                 src={img_i}
-                className="rounded-xl shadow-lg mb-4 w-48 mx-auto md:w-72"
+                className="rounded-full shadow-lg mb-4 w-48 mx-auto md:w-72"
                 alt="Profile"
               />
               <Container border>
@@ -59,19 +64,25 @@ function App() {
               </Container>
             </div>
             <div className="w-full md:flex-1 space-y-4">
-              <Container border isBlinking={isBlinkingAbout}>
-                <About translate={translate} setTranslate={setTranslate} />
-              </Container>
-              <Container border isBlinking={isBlinkingAbout}>
-                <Skills />
-              </Container>
+              <div id="about">
+                <Container border isBlinking={isBlinkingAbout}>
+                  <About translate={translate} setTranslate={setTranslate} />
+                </Container>
+                <Container border isBlinking={isBlinkingAbout}>
+                  <Skills />
+                </Container>
+              </div>
               <div className="flex flex-col md:flex-row gap-4">
-                <Container border isBlinking={isBlinkingContact}>
-                  <Contact translate={translate} />
-                </Container>
-                <Container border isBlinking={isBlinkingRepositories}>
-                  <Repositories translate={translate} />
-                </Container>
+                <div id="repositories">
+                  <Container border isBlinking={isBlinkingRepositories}>
+                    <Repositories translate={translate} />
+                  </Container>
+                </div>
+                <div id="contact">
+                  <Container border isBlinking={isBlinkingContact}>
+                    <Contact translate={translate} />
+                  </Container>
+                </div>
               </div>
             </div>
           </div>
