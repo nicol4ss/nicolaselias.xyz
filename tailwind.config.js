@@ -24,7 +24,6 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
-      // Adicionando a definição do gradiente personalizado
       backgroundImage: {
         "custom-gradient": "linear-gradient(to right, #131313, #1F1F1F)",
       },

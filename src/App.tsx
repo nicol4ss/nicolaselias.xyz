@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <div className="App overflow-x-hidden safe:pt-4 safe:pb-4 safe:pl-4 safe:pr-4 ">
+    <div className="App overflow-x-hidden safe:pt-4 safe:pb-4 safe:pl-4 safe:pr-4 pt-16">
       <Navbar
         translate={translate}
         onAboutClick={() => handleToggleBlink("about")}

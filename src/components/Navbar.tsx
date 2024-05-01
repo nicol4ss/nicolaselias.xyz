@@ -14,7 +14,7 @@ function Navbar({
   scrollToSection,
 }: NavbarProps) {
   return (
-    <nav className="shadow-xl">
+    <nav className="shadow-2xl fixed top-0 left-0 w-full z-50 bg-custom-gradient">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center h-16">
           <div className="flex items-center space-x-4">
