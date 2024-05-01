@@ -1,7 +1,7 @@
 import { useState } from "react";
 import About from "./components/About";
 import Container from "./components/Container";
-import img_i from "./assets/img_my.png";
+import img_i from "./assets/IMG_8105.CR2.jpg";
 import Navbar from "./components/Navbar";
 import MusicPlayer from "./components/MusicPlayer";
 import Contact from "./components/Contact";
@@ -32,7 +32,7 @@ function App() {
   };
 
   return (
-    <div className="App overflow-x-hidden safe:pt-4 safe:pb-4 safe:pl-4 safe:pr-4">
+    <div className="App overflow-x-hidden safe:pt-4 safe:pb-4 safe:pl-4 safe:pr-4 ">
       <Navbar
         translate={translate}
         onAboutClick={() => handleToggleBlink("about")}
@@ -46,7 +46,7 @@ function App() {
             <div className="w-full md:w-1/3 mb-4">
               <img
                 src={img_i}
-                className="rounded-full shadow-lg mb-4 w-48 mx-auto md:w-72"
+                className="rounded-3xl shadow-lg mb-4 w-48 mx-auto md:w-72"
                 alt="Profile"
               />
               <Container border>
