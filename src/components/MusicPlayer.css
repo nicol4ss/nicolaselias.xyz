@@ -1,0 +1,41 @@
+.music-player-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.music-player-container:hover {
+  opacity: 1;
+}
+
+.music-player-icon {
+  font-size: 36px;
+  color: #ffffff;
+}
+
+.music-player-tooltip {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 24px;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+}
+
+.music-player-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 12px;
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.8) transparent;
+}
